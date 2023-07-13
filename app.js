@@ -7,16 +7,16 @@ const main = document.querySelector('.main');
 
 /* Theme and color button functions */
 
-let filters = [];
+let filters = ['invert(0)', 'grayscale(0)'];
 
 function theme() {
     if (filters.includes('invert(1)')) {
-        // Find and remove invert from the list of filters and update button text
-        filters.splice(filters.indexOf('invert(1)'), 1);
+        // Disable color inversion effect and update button text
+        filters[0] = 'invert(0)';
         document.querySelector('.themeBtn').textContent = 'DARK MODE';
     } else {
-        // Add invert to the list of filters and update button text
-        filters.push('invert(1)');
+        // Enable color inversion effect and update button text
+        filters[0] = 'invert(1)';
         document.querySelector('.themeBtn').textContent = 'LIGHT MODE';
     }
     // Overwrite currently applied filters with what is stored in the filters list
@@ -25,12 +25,12 @@ function theme() {
 
 function color() {
     if (filters.includes('grayscale(1)')) {
-        // Find and remove grayscale from the list of filters and update button text
-        filters.splice(filters.indexOf('grayscale(1)'), 1);
+        // Disable grayscale effect and update button text
+        filters[1] = 'grayscale(0)';
         document.querySelector('.colorBtn').textContent = 'FULL COLOR';
     } else {
-        // Add grayscale to the list of filters and update button text
-        filters.push('grayscale(1)');
+        // Enable grayscale effect and update button text
+        filters[1] = 'grayscale(1)';
         document.querySelector('.colorBtn').textContent = 'GRAYSCALE';
     }
     // Overwrite currently applied filters with what is stored in the filters list

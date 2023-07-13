@@ -19,6 +19,7 @@
 html {
     background-color: var(--bgColor);
     color: var(--fontColor);
+    filter: invert(0) grayscale(0);
 }
 
 * {
