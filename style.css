@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: Roboto;
-    src: url("./font/RobotoCondensed-Bold.ttf");
+    src: url('./font/RobotoCondensed-Bold.ttf');
 }
 
 :root {
