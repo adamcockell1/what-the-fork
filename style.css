@@ -39,8 +39,8 @@ img {
     position: fixed;
     display: flex;
     max-width: 1000px;
-    transform-origin: top left;
     z-index: 1;
+    transition: 0s;
     opacity: 0;
 }
 

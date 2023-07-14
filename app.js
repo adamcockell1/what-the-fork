@@ -50,13 +50,16 @@ window.addEventListener('load', () => {
 /* Navbar reveal and image scale/transform on scoll */
 
 window.addEventListener('scroll', () => {
-    let scale = 100 - window.scrollY / 5.75;
+    // Very hacky transform math, ignore the next few lines
+    let scale = 100 - window.scrollY / 5.25;
     let left =
         (window.innerWidth - icon.width) / 2 -
-        (window.scrollY * window.innerWidth) / window.innerHeight;
+        (window.scrollY * window.innerWidth) / 1000 +
+        (window.scrollY / 68) * 10;
     let top =
         (window.innerHeight - icon.height) / 2 -
-        (window.scrollY * window.innerHeight) / window.innerWidth;
+        (window.scrollY * window.innerHeight) / 1000 +
+        (window.scrollY / 102) * 10;
 
     if (window.scrollY <= 500) {
         // Disable the navbar for the duration of the icon transform effect
@@ -71,6 +74,10 @@ window.addEventListener('scroll', () => {
         icon.style.left = left + 'px';
         icon.style.top = top + 'px';
     } else {
+        // Fix scale and translation
+        icon.style.top = 49.02 - icon.height / 2 + 'px';
+        icon.style.left = 73.53 - icon.width / 2 + 'px';
+        icon.style.transform = 'scale(4.8%)';
         // Re-enable transition for color/theme changes
         icon.style.transition = '0.5s';
         // Re-enable the navbar after the icon transform effect finishes

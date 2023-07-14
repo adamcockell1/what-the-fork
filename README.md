@@ -6,4 +6,4 @@ The intention behind this project is to create a striking visual web experience 
 
 ## Known Issues
 
--   Splash screen icon translation to navbar does not dynamically adjust to different window dimensions. To recreate: resize the viewport while the scroll translation is happening.
+-   None! :)
