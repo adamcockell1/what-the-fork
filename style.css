@@ -2,14 +2,14 @@
 
 @font-face {
     font-family: Roboto;
-    src: url('./font/RobotoCondensed-Bold.ttf');
+    src: url('./font/RobotoCondensed-Regular.ttf');
 }
 
 :root {
     --bgColor: #050001;
     --iconColor: #bf122d;
     --fontColor: #fff;
-    --lineSize: 5px solid;
+    --lineSize: 3px solid;
     box-sizing: border-box;
     text-decoration: none;
     cursor: default;
@@ -40,7 +40,6 @@ img {
     display: flex;
     max-width: 1000px;
     z-index: 1;
-    transition: 0s;
     opacity: 0;
 }
 

@@ -50,16 +50,19 @@ window.addEventListener('load', () => {
 /* Navbar reveal and image scale/transform on scoll */
 
 window.addEventListener('scroll', () => {
-    // Very hacky transform math, ignore the next few lines
+    // Define scaling and translation functions
     let scale = 100 - window.scrollY / 5.25;
+    // (window.innerWidth - icon.width) / 2 is the initial position (center)
+    // (window.scrollY * window.innerWidth) / 1000 translates to the top left corner
+    // window.scrollY / X determines the 'padding' between the edges and the icon
     let left =
         (window.innerWidth - icon.width) / 2 -
         (window.scrollY * window.innerWidth) / 1000 +
-        (window.scrollY / 68) * 10;
+        window.scrollY / 6.8;
     let top =
         (window.innerHeight - icon.height) / 2 -
         (window.scrollY * window.innerHeight) / 1000 +
-        (window.scrollY / 102) * 10;
+        window.scrollY / 10.2;
 
     if (window.scrollY <= 500) {
         // Disable the navbar for the duration of the icon transform effect
@@ -74,12 +77,12 @@ window.addEventListener('scroll', () => {
         icon.style.left = left + 'px';
         icon.style.top = top + 'px';
     } else {
-        // Fix scale and translation
-        icon.style.top = 49.02 - icon.height / 2 + 'px';
-        icon.style.left = 73.53 - icon.width / 2 + 'px';
+        // Fix transform inaccuracies caused by jumps in scrollY value
+        // The values below are the same as the translation functions defined above,
+        // but solved and simplified with 500 in place of window.scrollY
         icon.style.transform = 'scale(4.8%)';
-        // Re-enable transition for color/theme changes
-        icon.style.transition = '0.5s';
+        icon.style.left = 73.53 - icon.width / 2 + 'px';
+        icon.style.top = 49.02 - icon.height / 2 + 'px';
         // Re-enable the navbar after the icon transform effect finishes
         navBar.style.opacity = '1';
         for (let i = 0; i < navButtons.length; i++) {
