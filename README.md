@@ -11,14 +11,14 @@ Inspired by:
 
 ## Contributor Guidelines
 
-This project uses Prettier for code formatting. Ensure that Prettier is downloaded and enabled for this project before committing.
+This project uses Prettier for code formatting. Ensure that Prettier is downloaded and enabled for this project before continuing.
 
 1. Commit changes to a new branch, not `main`
 2. Branches must follow a naming scheme:
-    - `f/<branchName>` for <u>f</u>eature additions
-    - `b/<branchName>` for <u>b</u>ugfixes
-    - `o/<branchName>` for <u>o</u>ther types
-3. Fill out the pull request template upon creating a new branch
+    - `f/<branchName>` for feature additions
+    - `b/<branchName>` for bugfixes
+    - `o/<branchName>` for other types
+3. Fill out the pull request template upon committing to a new branch
 4. All commits and pull requests must use a relevant [gitmoji](https://gitmoji.dev/)
 
 ## Known Issues
